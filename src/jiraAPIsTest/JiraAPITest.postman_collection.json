@@ -1,0 +1,221 @@
+{
+  "info": {
+    "_postman_id": "6e236da4-56b5-4a4c-a717-3a17f4109fac",
+    "name": "Jira API Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56051359",
+    "_collection_link": "https://go.postman.co/collection/56051359-6e236da4-56b5-4a4c-a717-3a17f4109fac?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Bug API Test",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{basic_auth_0r6s}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"fields\": {\r\n       \"project\":\r\n       {\r\n          \"key\": \"SAI\"\r\n       },\r\n       \"summary\": \"Order Submit Button not working as expected\",\r\n       \"description\": {\r\n        \"type\" : \"doc\",\r\n        \"version\" : 1,\r\n        \"content\": [\r\n            {\r\n                \"type\": \"paragraph\",\r\n                \"content\":[\r\n                    {\r\n                        \"type\": \"text\",\r\n                        \"text\": \"Submit Button not working\"\r\n                    }\r\n                    \r\n\r\n                ]\r\n            }\r\n        ]\r\n       },\r\n       \"issuetype\": {\r\n          \"name\": \"Bug\"\r\n       }\r\n   }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://maddusaikiran196.atlassian.net/rest/api/3/issue",
+          "protocol": "https",
+          "host": [
+            "maddusaikiran196",
+            "atlassian",
+            "net"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "3",
+            "issue"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Fetch Bug API Test",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{basic_auth_0r6s}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://maddusaikiran196.atlassian.net/rest/api/3/issue/SAI-6",
+          "protocol": "https",
+          "host": [
+            "maddusaikiran196",
+            "atlassian",
+            "net"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "3",
+            "issue",
+            "SAI-6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Attachments to Bug API Test",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{basic_auth_0r6s}}",
+            "type": "text"
+          },
+          {
+            "key": "X-Atlassian-Token",
+            "value": "no-check",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "2ff83939-1b62-454a-8c51-4ad7dc874622",
+              "src": "/C:/Users/madsaikiran/Desktop/BugAttachment.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://maddusaikiran196.atlassian.net/rest/api/3/issue/10084/attachments",
+          "protocol": "https",
+          "host": [
+            "maddusaikiran196",
+            "atlassian",
+            "net"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "3",
+            "issue",
+            "10084",
+            "attachments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Bug API Test",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{basic_auth_0r6s}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fields\": {\r\n    \"description\": {\r\n      \"type\": \"doc\",\r\n      \"version\": 1,\r\n      \"content\": [\r\n        {\r\n          \"type\": \"paragraph\",\r\n          \"content\": [\r\n            {\r\n              \"type\": \"text\",\r\n              \"text\": \"Given user navigate to order submission page. When user clicking on submit button, Then Submit Button not working\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://maddusaikiran196.atlassian.net/rest/api/3/issue/SAI-4",
+          "protocol": "https",
+          "host": [
+            "maddusaikiran196",
+            "atlassian",
+            "net"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "3",
+            "issue",
+            "SAI-4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Bug API Test",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{basic_auth_0r6s}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://maddusaikiran196.atlassian.net/rest/api/3/issue/SAI-3",
+          "protocol": "https",
+          "host": [
+            "maddusaikiran196",
+            "atlassian",
+            "net"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "3",
+            "issue",
+            "SAI-3"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "basic_auth_0r6s",
+      "secret": true
+    }
+  ]
+}

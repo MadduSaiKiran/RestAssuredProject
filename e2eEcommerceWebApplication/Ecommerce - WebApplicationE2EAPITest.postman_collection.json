@@ -1,0 +1,222 @@
+{
+  "info": {
+    "_postman_id": "b3938d45-5c9a-4fae-9634-20925ca9a077",
+    "name": "Ecommerce - Web Application E2E API Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56051359",
+    "_collection_link": "https://go.postman.co/collection/56051359-b3938d45-5c9a-4fae-9634-20925ca9a077?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Login API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userEmail\": \"automationtester@test.com\",\r\n    \"userPassword\": \"Test@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://rahulshettyacademy.com/api/ecom/auth/login",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "api",
+            "ecom",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Product API",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{json_web_token_0kv7}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "productName",
+              "type": "text",
+              "value": "Rolex - Watch"
+            },
+            {
+              "key": "productAddedBy",
+              "type": "text",
+              "value": "6a4cdb3d85b8849b49d24956"
+            },
+            {
+              "key": "productCategory",
+              "type": "text",
+              "value": "fashion"
+            },
+            {
+              "key": "productSubCategory",
+              "type": "text",
+              "value": "stainless steel"
+            },
+            {
+              "key": "productPrice",
+              "type": "text",
+              "value": "11499"
+            },
+            {
+              "key": "productDescription",
+              "type": "text",
+              "value": "Rolex - Submariner 40mm | stainless steel | Men | Black"
+            },
+            {
+              "key": "productFor",
+              "type": "text",
+              "value": "Men"
+            },
+            {
+              "key": "productImage",
+              "type": "file",
+              "uuid": "5752ea1c-14dc-4c5a-b6a5-b07f8449482a",
+              "src": "/C:/Users/madsaikiran/Desktop/productImage.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://rahulshettyacademy.com/api/ecom/product/add-product",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "api",
+            "ecom",
+            "product",
+            "add-product"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Order API",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{json_web_token_0kv7}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"orders\": [\r\n        {\r\n            \"country\": \"India\",\r\n            \"productOrderedId\": \"6a4ce31085b8849b49d26760\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://rahulshettyacademy.com/api/ecom/order/create-order",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "api",
+            "ecom",
+            "order",
+            "create-order"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Order Details API",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{json_web_token_0kv7}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=6a4ce52385b8849b49d27042",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "api",
+            "ecom",
+            "order",
+            "get-orders-details"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "6a4ce52385b8849b49d27042"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete Product API",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{json_web_token_0kv7}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://rahulshettyacademy.com/api/ecom/product/delete-product/6a4ce31085b8849b49d26760",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "api",
+            "ecom",
+            "product",
+            "delete-product",
+            "6a4ce31085b8849b49d26760"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0kv7",
+      "secret": true
+    }
+  ]
+}
