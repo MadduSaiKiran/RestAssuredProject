@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-17T18:47:28 IST" name="Default suite" finished-at="2026-07-17T18:47:31 IST" duration-ms="2415">
+  <suite started-at="2026-10-04T12:11:16 IST" name="Default suite" finished-at="2026-10-04T12:11:21 IST" duration-ms="4506">
     <groups>
     </groups>
-    <test started-at="2026-07-17T18:47:28 IST" name="Default test" finished-at="2026-07-17T18:47:31 IST" duration-ms="2415">
-      <class name="dataDrivenUsingExcel.DataDrivenAPITest">
-        <test-method signature="addBook()[pri:0, instance:dataDrivenUsingExcel.DataDrivenAPITest@35cabb2a]" started-at="2026-07-17T18:47:28 IST" name="addBook" finished-at="2026-07-17T18:47:31 IST" duration-ms="2389" status="PASS">
+    <test started-at="2026-10-04T12:11:16 IST" name="Default test" finished-at="2026-10-04T12:11:21 IST" duration-ms="4506">
+      <class name="serializationAndDeserializationTest.SerializationDeserializationUsingObjectMapperTest">
+        <test-method signature="serializationTest()[pri:0, instance:serializationAndDeserializationTest.SerializationDeserializationUsingObjectMapperTest@16d04d3d]" started-at="2026-10-04T12:11:16 IST" name="serializationTest" finished-at="2026-10-04T12:11:21 IST" duration-ms="4444" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addBook -->
-      </class> <!-- dataDrivenUsingExcel.DataDrivenAPITest -->
+        </test-method> <!-- serializationTest -->
+      </class> <!-- serializationAndDeserializationTest.SerializationDeserializationUsingObjectMapperTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
